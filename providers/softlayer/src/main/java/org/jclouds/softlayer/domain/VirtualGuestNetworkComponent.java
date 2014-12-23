@@ -24,7 +24,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 
 /**
- * Class VirtualGuestBlockDeviceTemplateGroup
+ * Class VirtualGuestNetworkComponent
  *
  * @see <a href= "http://sldn.softlayer.com/reference/datatypes/SoftLayer_Virtual_Guest_Network_Component"/>
  */
@@ -50,6 +50,7 @@ public class VirtualGuestNetworkComponent {
       protected int port;
       protected int speed;
       protected String status;
+      protected NetworkVlan networkVlan;
 
       /**
        * @see org.jclouds.softlayer.domain.VirtualGuestNetworkComponent#getId()
@@ -92,7 +93,7 @@ public class VirtualGuestNetworkComponent {
       }
 
       /**
-       * @see VirtualGuestNetworkComponent#getMaxSpeed()
+       * @see org.jclouds.softlayer.domain.VirtualGuestNetworkComponent#getMaxSpeed()
        */
       public Builder maxSpeed(int maxSpeed) {
          this.maxSpeed = maxSpeed;
@@ -115,6 +116,9 @@ public class VirtualGuestNetworkComponent {
          return this;
       }
 
+      /**
+       * @see org.jclouds.softlayer.domain.VirtualGuestNetworkComponent#getSpeed()
+       */
       public Builder status(String status) {
          this.status = status;
          return this;
