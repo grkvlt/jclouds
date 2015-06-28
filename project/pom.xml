@@ -87,13 +87,13 @@
 
   <repositories>
     <repository>
-      <id>apache-snapshots</id>
-      <url>https://repository.apache.org/content/repositories/snapshots</url>
+      <id>cloudsoft</id>
+      <url>http://ccweb.cloudsoftcorp.com/maven/libs-release-local/</url>
       <releases>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
       </releases>
       <snapshots>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
       </snapshots>
     </repository>
   </repositories>
@@ -117,6 +117,11 @@
       <id>jclouds-github-pages-site</id>
       <url>${maven.site.url.base}/${project.version}</url>
     </site>
+    <repository>
+      <id>cloudsoft-deploy-artifactory-release</id>
+      <name>Cloudsoft Artifactory libs-release-local repo</name>
+      <url>http://ccweb.cloudsoftcorp.com/maven/libs-release-local/</url>
+    </repository>
   </distributionManagement>
 
   <developers>
