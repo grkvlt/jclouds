@@ -37,11 +37,11 @@ public class JcloudsVersion {
     private static final String VERSION_PROPERTY_NAME = "version";
 
     /*
-     * x.y.z or x.y.z-alpha.n or x.y.z-beta.n or x.y.z-rc.n or x.y.z-SNAPSHOT -
-     * see http://semver.org.
+     * Matches x.y.z or x.y.z-alpha.n or x.y.z-beta.n or x.y.z-rc.n or x.y.z-SNAPSHOT - see http://semver.org/
+     * Also matches x.y.z-* as fallback, with any non-whitespace character sequence after the hyphen.
      */
     private static final Pattern SEMANTIC_VERSION_PATTERN =
-        Pattern.compile("(\\d+)\\.(\\d+)\\.(\\d+)(?:-(alpha|beta|rc)\\.(\\d+)|-SNAPSHOT)?");
+        Pattern.compile("(\\d+)\\.(\\d+)\\.(\\d+)(?:-(alpha|beta|rc)\\.(\\d+)|-SNAPSHOT|-\\S+)?");
     private static final String ALPHA_VERSION_IDENTIFIER = "alpha";
     private static final String BETA_VERSION_IDENTIFIER = "beta";
 
